@@ -92,7 +92,7 @@
     @foreach ($tasks as $task)
         <div class="task-container">
             <p><strong>{{ $task->title }}</strong> - {{ $task->description }} - 
-                <span style="color: {{ $task->completed ? 'green' : 'red' }};">
+                <span style="color: @if($task->completed) green @else red @endif;">
                     {{ $task->completed ? 'Completada' : 'No completada' }}
                 </span>
             </p>
